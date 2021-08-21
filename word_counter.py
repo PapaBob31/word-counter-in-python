@@ -4,7 +4,7 @@ run = True
 
 class word_counter:
 	def __init__(self):
-		# class variables
+		"""class variables"""
 
 		# contains all the characters that usually seperate words in a sentence 
 		self.ignore = [" ", ","]
@@ -13,11 +13,8 @@ class word_counter:
 		self.counter = []
 
 	def input_sentence(self):
-		global run
 		self.input = input("enter a sentence and I'll count the number of words in it\nType 'Q' or 'q' to exit\n")
 		self.input = self.input.strip()
-		if self.input == "q" or self.input == "Q":
-			run = False
 
 	def word_count(self):
 		# loops through all the letters in a sentence
@@ -54,6 +51,8 @@ counter = word_counter()
 
 while run:
 	counter.input_sentence()
+	if counter.input == "q" or counter.input == "Q":
+		break
 	counter.word_count()
 	counter.no_of_words()
 
